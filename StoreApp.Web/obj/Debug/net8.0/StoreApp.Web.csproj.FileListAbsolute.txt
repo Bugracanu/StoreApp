@@ -125,3 +125,5 @@ C:\Users\mblac\Desktop\aspnetcore-dersleri\StoreApp\StoreApp.Web\obj\Debug\net8.
 C:\Users\mblac\Desktop\aspnetcore-dersleri\StoreApp\StoreApp.Web\obj\Debug\net8.0\StoreApp.Web.pdb
 C:\Users\mblac\Desktop\aspnetcore-dersleri\StoreApp\StoreApp.Web\obj\Debug\net8.0\StoreApp.Web.genruntimeconfig.cache
 C:\Users\mblac\Desktop\aspnetcore-dersleri\StoreApp\StoreApp.Web\obj\Debug\net8.0\ref\StoreApp.Web.dll
+C:\Users\mblac\Desktop\aspnetcore-dersleri\StoreApp\StoreApp.Web\bin\Debug\net8.0\libman.json
+C:\Users\mblac\Desktop\aspnetcore-dersleri\StoreApp\StoreApp.Web\bin\Debug\net8.0\StoreApp.Web.staticwebassets.runtime.json

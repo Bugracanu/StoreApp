@@ -16,20 +16,24 @@ public class HomeController : Controller
     }
     public IActionResult Index(int page = 1)
     {
-        var products = _storeRepository.Products.Skip((page - 1) * pageSize).Select(p => new ProductViewModel
+        var products = _storeRepository
+        .Products
+        .Skip((page - 1) * pageSize)
+        .Select(p => new ProductViewModel
         {
             Id = p.Id,
             Name = p.Name,
             Description = p.Description,
             Price = p.Price
-        }).ToList();
+        }).Take(pageSize);
 
         return View(new ProductListViewModel
         {
             Products = products,
             PageInfo = new PageInfo
             {
-                ItemPerPage = pageSize,
+                ItemsPerPage = pageSize,
+                CurrentPage = page,
                 TotalItems = _storeRepository.Products.Count()
             }
         });

@@ -1,4 +1,11 @@
 @model ProductListViewModel
+<h5>Index Page</h5>
+
+ @if(Model.Products.Count() == 0)
+ {
+    <p>ÜRÜN BULUNAMADI</p>
+ }
+
 
     @foreach(var p in Model.Products)
     {
@@ -8,4 +15,5 @@
             <p>@p.Price</p>
         </div>
     }
-<h5>Index Page</h5>
+
+<div page-model="@Model.PageInfo" page-action="Index"></div>

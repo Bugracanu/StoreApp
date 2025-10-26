@@ -1,2 +1,60 @@
-@page
-<h1>Cart Page</h1>
+﻿@page
+@model CartModel
+
+<h2>Sepetim</h2>
+@if(Model?.Cart?.Items.Count() == 0)
+{
+<div class="alert alert-warning">Sepetinizde Ürün yok</div>
+}
+else
+{
+        <table class="table table-bordered table striped">
+            <thead>
+                <tr>
+                    <th>Quantity</th>
+                    <th>İtem</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach(var item in Model?.Cart?.Items ?? Enumerable.Empty<CartItem>())
+                    {
+                    <tr>
+                        <td>@item.Quantity</td>
+                        <td>@item.Product.Name</td>
+                        <td>@item.Product.Price TL</td>
+                        <td>@((item.Quantity * item.Product.Price).ToString()) TL</td>
+                        <td>
+                            <form method="post" asp-page-handler="Remove">
+                                <input type="hidden" name="Id" value="@item.Product.Id">
+                                <button type="submit" class="btn bttn-sm btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    }
+
+
+
+
+
+
+
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total :</td>
+                    <td>
+                        @Model?.Cart?.CalculateTotal() TL
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+}
+
+
+<div>
+    <a href="/" class="btn btn-primary">Alışverişe Devam Et</a>
+</div>

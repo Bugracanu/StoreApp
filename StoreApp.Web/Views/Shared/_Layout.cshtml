@@ -9,11 +9,8 @@
 </head>
 
 <body>
-    <div class="bg-secondary text-white p-3">
-        <div class="container">
-            <a class="navbar-brand" asp-controller="Home" asp-action="Index">Store App</a>
-        </div>
-    </div> 
+    <partial Name="_Navbar" />
+    
     <div class="container my-3">
         @RenderBody()
     </div>
